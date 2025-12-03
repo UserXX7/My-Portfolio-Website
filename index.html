@@ -3,34 +3,121 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Alif R. Rony - Resume</title>
+  <title>Alif R. Rony - Portfolio</title>
 
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <style>
+    :root {
+      --accent: #1a73e8;
+      --accent-soft: rgba(26, 115, 232, 0.12);
+      --text-main: #0f172a;
+      --text-muted: #64748b;
+      --card-bg: #ffffff;
+      --border-subtle: rgba(148, 163, 184, 0.4);
+      --radius-lg: 18px;
+      --shadow-soft: 0 12px 30px rgba(15, 23, 42, 0.18);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       font-family: "Poppins", Arial, sans-serif;
-      background: linear-gradient(135deg, #e3f2ff, #f5f8ff);
+      background: radial-gradient(circle at top, #e0f2fe 0, #e3f2ff 30%, #f5f8ff 60%, #e5e7eb 100%);
       margin: 0;
       padding: 20px;
+      color: var(--text-main);
     }
 
     .container {
-      max-width: 900px;
+      max-width: 1000px;
       margin: auto;
       background: #ffffffcc;
-      backdrop-filter: blur(10px);
-      padding: 40px;
-      border-radius: 18px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+      backdrop-filter: blur(16px);
+      padding: 28px 32px 40px;
+      border-radius: 24px;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      position: relative;
+      overflow: hidden;
     }
 
-    /* 🔹 HEADER ONLY CENTERED */
+    .container::before {
+      content: "";
+      position: absolute;
+      width: 320px;
+      height: 320px;
+      background: radial-gradient(circle, rgba(59,130,246,0.18), transparent 70%);
+      top: -120px;
+      right: -120px;
+      pointer-events: none;
+      opacity: 0.9;
+    }
+
+    /* ====== TOP NAV ====== */
+    .top-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 24px;
+      position: sticky;
+      top: 10px;
+      z-index: 10;
+      background: #ffffffee;
+      border-radius: 999px;
+      padding: 8px 16px;
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      box-shadow: 0 8px 22px rgba(15, 23, 42, 0.16);
+    }
+
+    .brand {
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      font-size: 0.95rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .brand i {
+      color: var(--accent);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 14px;
+      font-size: 0.9rem;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text-muted);
+      padding: 6px 12px;
+      border-radius: 999px;
+      transition: 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      background: var(--accent-soft);
+      color: var(--accent);
+    }
+
+    /* ====== HEADER / HERO ====== */
     .header-section {
       text-align: center;
-      margin-bottom: 30px;
-      animation: fadeIn 1s ease-in-out;
+      margin-bottom: 32px;
+      animation: fadeIn 0.9s ease-in-out;
+      position: relative;
+      z-index: 1;
     }
 
     @keyframes fadeIn {
@@ -43,101 +130,342 @@
       height: 150px;
       border-radius: 50%;
       object-fit: cover;
-      border: 4px solid #1a73e8; 
-      box-shadow: 0 5px 15px rgba(0,0,0,0.15); 
-      margin-bottom: 20px;
+      border: 4px solid var(--accent);
+      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.35);
+      margin-bottom: 16px;
       display: block;
       margin-left: auto;
       margin-right: auto;
       transition: 0.3s ease;
+      background: #e5e7eb;
     }
 
     .profile-img:hover {
-      transform: scale(1.08);
-      box-shadow: 0 0 20px #1a73e8aa;
+      transform: translateY(-4px) scale(1.05);
+      box-shadow: 0 0 26px rgba(26, 115, 232, 0.75);
     }
 
     h1 {
       font-size: 2.4rem;
-      color: #1a73e8;
-      margin-bottom: 8px;
+      color: var(--accent);
+      margin-bottom: 4px;
+    }
+
+    .subtitle {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      margin-bottom: 14px;
     }
 
     .contact p {
-      margin: 5px 0;
-      font-size: 1.1rem;
+      margin: 3px 0;
+      font-size: 0.98rem;
+      color: var(--text-main);
     }
 
     .contact a {
-      color: #1a73e8;
+      color: var(--accent);
       text-decoration: none;
     }
 
-    /* Icon spacing */
+    .contact a:hover {
+      text-decoration: underline;
+    }
+
     .contact i {
       margin-right: 6px;
-      color: #1a73e8;
+      color: var(--accent);
     }
 
     .links {
-      margin-top: 12px;
+      margin-top: 16px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
     }
 
     .links a {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      margin: 0 10px;
-      padding: 8px 20px;
-      border-radius: 25px;
-      border: 2px solid #1a73e8;
-      color: #1a73e8;
+      padding: 8px 18px;
+      border-radius: 999px;
+      border: 2px solid var(--accent);
+      color: var(--accent);
       text-decoration: none;
       font-weight: 600;
-      transition: 0.3s ease;
+      font-size: 0.9rem;
+      transition: 0.25s ease;
+      background: #ffffff;
+    }
+
+    .links a.primary {
+      background: var(--accent);
+      color: white;
+      box-shadow: 0 10px 20px rgba(26, 115, 232, 0.45);
     }
 
     .links a:hover {
-      background: #1a73e8;
+      background: var(--accent);
       color: white;
-      box-shadow: 0 0 12px #1a73e8aa;
-      transform: translateY(-3px);
+      box-shadow: 0 0 12px rgba(26, 115, 232, 0.75);
+      transform: translateY(-2px);
     }
 
-    /* 🔹 SECTIONS BELOW ARE LEFT ALIGNED */
+    /* ====== MAIN LAYOUT ====== */
+    .main-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.7fr) minmax(0, 1.1fr);
+      gap: 22px;
+      align-items: flex-start;
+    }
+
+    @media (max-width: 800px) {
+      .top-nav {
+        flex-direction: column;
+        gap: 6px;
+      }
+      .main-grid {
+        grid-template-columns: 1fr;
+      }
+      .container {
+        padding: 20px 17px 32px;
+      }
+    }
+
+    /* ====== SECTIONS (CARDS) ====== */
     .section {
-      margin-bottom: 25px;
+      margin-bottom: 20px;
       text-align: left;
+      background: var(--card-bg);
+      padding: 18px 20px;
+      border-radius: var(--radius-lg);
+      box-shadow: 0 8px 20px rgba(15, 23, 42, 0.06);
+      border: 1px solid var(--border-subtle);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .section::before {
+      content: "";
+      position: absolute;
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(59,130,246,0.14), transparent 70%);
+      top: -70px;
+      right: -40px;
+      opacity: 0.7;
+      pointer-events: none;
     }
 
     .section-title {
-      font-size: 1.6rem;
-      border-bottom: 2px solid #ccc;
-      padding-bottom: 5px;
+      font-size: 1.3rem;
+      border-bottom: 1px solid rgba(148, 163, 184, 0.45);
+      padding-bottom: 6px;
       margin-bottom: 10px;
-      color: #1a73e8;
+      color: var(--accent);
+      display: flex;
+      align-items: center;
+      gap: 8px;
     }
 
-    ul { padding-left: 20px; }
+    .section-title i {
+      font-size: 1rem;
+    }
+
+    .section p {
+      font-size: 0.95rem;
+      color: var(--text-main);
+    }
+
+    .section ul {
+      padding-left: 18px;
+      margin-top: 4px;
+      font-size: 0.93rem;
+      color: var(--text-main);
+    }
+
+    .section ul li {
+      margin-bottom: 4px;
+      position: relative;
+    }
+
+    .section ul li::marker {
+      color: var(--accent);
+    }
+
+    /* ====== SKILLS AS PILLS ====== */
+    .skills-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 8px;
+    }
+
+    .skill-pill {
+      background: var(--accent-soft);
+      border-radius: 999px;
+      padding: 5px 12px;
+      font-size: 0.8rem;
+      color: var(--accent);
+      border: 1px solid rgba(37, 99, 235, 0.35);
+      font-weight: 500;
+      white-space: nowrap;
+    }
+
+    .skills-subgroup {
+      margin-top: 6px;
+      margin-bottom: 8px;
+    }
+
+    .skills-subgroup span.label {
+      font-weight: 600;
+      font-size: 0.86rem;
+      color: var(--text-muted);
+      display: inline-block;
+      margin-bottom: 3px;
+    }
+
+    /* ====== PROJECT CARDS ====== */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+
+    @media (min-width: 700px) {
+      .projects-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    .project-card {
+      background: #f8fafc;
+      border-radius: 16px;
+      padding: 14px 14px 16px;
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      box-shadow: 0 10px 22px rgba(15, 23, 42, 0.09);
+      transition: 0.25s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .project-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(59,130,246,0.12), transparent);
+      opacity: 0;
+      transition: 0.25s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 35px rgba(15, 23, 42, 0.18);
+      border-color: rgba(59,130,246,0.7);
+    }
+
+    .project-card:hover::before {
+      opacity: 1;
+    }
+
+    .project-title {
+      font-weight: 600;
+      margin-bottom: 2px;
+    }
+
+    .project-meta {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+    }
+
+    /* ====== TIMELINE FOR EXPERIENCE ====== */
+    .timeline {
+      border-left: 2px solid rgba(148, 163, 184, 0.7);
+      margin-left: 6px;
+      padding-left: 16px;
+    }
+
+    .exp-item {
+      margin-bottom: 14px;
+      position: relative;
+      padding-left: 4px;
+    }
+
+    .exp-item::before {
+      content: "";
+      position: absolute;
+      left: -19px;
+      top: 7px;
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      background: var(--accent);
+      box-shadow: 0 0 0 4px rgba(59,130,246,0.25);
+    }
+
+    .exp-role {
+      font-weight: 600;
+      font-size: 0.97rem;
+    }
+
+    .exp-org {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 2px;
+    }
+
+    .exp-dates {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-bottom: 4px;
+    }
+
+    .exp-item ul {
+      margin-top: 4px;
+    }
+
+    /* ====== SMALL FOOTER ====== */
+    .footer-note {
+      margin-top: 22px;
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
   </style>
 </head>
 <body>
 
   <div class="container">
+    <!-- NAV -->
+    <div class="top-nav">
+      <div class="brand">
+        <i class="fa-solid fa-code"></i> ALIF R. RONY
+      </div>
+      <div class="nav-links">
+        <a href="#summary">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#education">Education</a>
+      </div>
+    </div>
 
-    <!-- ⭐ HEADER SECTION ⭐ -->
+    <!-- HERO / HEADER -->
     <div class="header-section">
-
+      <!-- 🔁 Replace src with your actual image file name -->
       <img src="profile_picture.jpg" alt="Alif R. Rony" class="profile-img" />
 
-
-
       <h1>Alif R. Rony</h1>
+      <p class="subtitle">Junior Software & Web Developer · Problem Solver · Builder</p>
 
       <div class="contact">
         <p><i class="fa-solid fa-location-dot"></i> Woodside, NY 11377</p>
         <p>
-          <i class="fa-solid fa-phone"></i> (631) 408-7177 |
+          <i class="fa-solid fa-phone"></i> (631) 408-7177 ·
           <a href="mailto:alifreza@live.com">
             <i class="fa-solid fa-envelope"></i> alifreza@live.com
           </a>
@@ -145,87 +473,187 @@
       </div>
 
       <div class="links">
-        <a href="#"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
-        <a href="#"><i class="fa-brands fa-github"></i> GitHub</a>
-        <a href="#"><i class="fa-solid fa-code"></i> Devpost</a>
+        <a href="#" class="primary">
+          <i class="fa-solid fa-file-arrow-down"></i> Download Resume
+        </a>
+        <a href="#">
+          <i class="fa-brands fa-linkedin"></i> LinkedIn
+        </a>
+        <a href="#">
+          <i class="fa-brands fa-github"></i> GitHub
+        </a>
+        <a href="#">
+          <i class="fa-solid fa-code"></i> Devpost
+        </a>
+      </div>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div class="main-grid">
+      <!-- LEFT COLUMN -->
+      <div>
+        <!-- SUMMARY -->
+        <div class="section" id="summary">
+          <h2 class="section-title">
+            <i class="fa-solid fa-user"></i> Professional Summary
+          </h2>
+          <p>
+            Detail-oriented and self-motivated junior software & web developer with hands-on experience
+            building responsive web applications using HTML, CSS, JavaScript, C++, C#, Java and MySQL.
+            Skilled at combining technical expertise with strong organizational and leadership abilities.
+          </p>
+        </div>
+
+        <!-- PROJECTS -->
+        <div class="section" id="projects">
+          <h2 class="section-title">
+            <i class="fa-solid fa-folder-open"></i> Featured Projects
+          </h2>
+
+          <div class="projects-grid">
+            <div class="project-card">
+              <div class="project-title">Pawtopia – E-Commerce Website</div>
+              <div class="project-meta"><i class="fa-solid fa-paw"></i> HTML · CSS · JavaScript</div>
+              <ul>
+                <li>Developed responsive pet supply product pages with modern UI components.</li>
+                <li>Implemented interactive image sliders, hover effects, and cart-style UI.</li>
+              </ul>
+            </div>
+
+            <div class="project-card">
+              <div class="project-title">Jobscript – Resume Builder & Matcher</div>
+              <div class="project-meta"><i class="fa-solid fa-briefcase"></i> Web App · Firebase</div>
+              <ul>
+                <li>Built a job-matching platform with dynamic resume generation tools.</li>
+                <li>Integrated Firebase authentication and basic user data handling.</li>
+              </ul>
+            </div>
+
+            <div class="project-card">
+              <div class="project-title">FlourSync – Retail POS System</div>
+              <div class="project-meta"><i class="fa-solid fa-cash-register"></i> C# · .NET MAUI · MySQL</div>
+              <ul>
+                <li>Designed full POS interface in Figma for a real bakery business.</li>
+                <li>Implemented core screens with C#, .NET MAUI and MySQL backend.</li>
+              </ul>
+            </div>
+
+            <div class="project-card">
+              <div class="project-title">Personal Portfolio & Labs</div>
+              <div class="project-meta"><i class="fa-solid fa-laptop-code"></i> HTML · CSS · JS</div>
+              <ul>
+                <li>Built multiple small experiments to practice layouts, animations and UI patterns.</li>
+                <li>Showcases projects, coursework and hands-on learning journey.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- EXPERIENCE -->
+        <div class="section" id="experience">
+          <h2 class="section-title">
+            <i class="fa-solid fa-briefcase"></i> Professional Experience
+          </h2>
+
+          <div class="timeline">
+            <div class="exp-item">
+              <div class="exp-role">Operations Manager</div>
+              <div class="exp-org">Ideal Foods</div>
+              <div class="exp-dates">2022 – Present</div>
+              <ul>
+                <li>Oversees inventory and technical operations valued at $450k–$550k yearly.</li>
+                <li>Manages hiring, training, scheduling and workflow optimization.</li>
+                <li>Automates tasks to reduce manual work and improve efficiency.</li>
+              </ul>
+            </div>
+
+            <div class="exp-item">
+              <div class="exp-role">Store Manager</div>
+              <div class="exp-org">Bagel Point</div>
+              <div class="exp-dates">2018 – 2022</div>
+              <ul>
+                <li>Launched and managed a new restaurant location from the ground up.</li>
+                <li>Created digital menus and daily report systems.</li>
+                <li>Improved operations through social media and customer feedback systems.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
       </div>
 
+      <!-- RIGHT COLUMN -->
+      <div>
+        <!-- SKILLS -->
+        <div class="section" id="skills">
+          <h2 class="section-title">
+            <i class="fa-solid fa-wand-magic-sparkles"></i> Technical Skills
+          </h2>
+
+          <div class="skills-subgroup">
+            <span class="label">Languages</span>
+            <div class="skills-wrap">
+              <span class="skill-pill">HTML</span>
+              <span class="skill-pill">CSS</span>
+              <span class="skill-pill">JavaScript</span>
+              <span class="skill-pill">C++</span>
+              <span class="skill-pill">C#</span>
+              <span class="skill-pill">Java</span>
+            </div>
+          </div>
+
+          <div class="skills-subgroup">
+            <span class="label">Web Development</span>
+            <div class="skills-wrap">
+              <span class="skill-pill">Responsive Design</span>
+              <span class="skill-pill">UI/UX Principles</span>
+              <span class="skill-pill">DOM Manipulation</span>
+            </div>
+          </div>
+
+          <div class="skills-subgroup">
+            <span class="label">Tools & Platforms</span>
+            <div class="skills-wrap">
+              <span class="skill-pill">Git</span>
+              <span class="skill-pill">GitHub</span>
+              <span class="skill-pill">MySQL</span>
+              <span class="skill-pill">Visual Studio</span>
+              <span class="skill-pill">Linux</span>
+            </div>
+          </div>
+
+          <div class="skills-subgroup">
+            <span class="label">Design & Other</span>
+            <div class="skills-wrap">
+              <span class="skill-pill">Figma</span>
+              <span class="skill-pill">Adobe Photoshop</span>
+              <span class="skill-pill">Project Management</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- EDUCATION -->
+        <div class="section" id="education">
+          <h2 class="section-title">
+            <i class="fa-solid fa-graduation-cap"></i> Education
+          </h2>
+          <p>
+            <strong>LaGuardia Community College</strong><br>
+            AAS in Programming &amp; Software Development<br>
+            <span style="font-size:0.9rem; color:var(--text-muted);">Expected May 2026</span>
+          </p>
+          <ul>
+            <li>Data Structures</li>
+            <li>Algorithms</li>
+            <li>Web Development</li>
+            <li>OOP &amp; Game Design</li>
+          </ul>
+        </div>
+      </div>
     </div>
 
-    <!-- ⭐ LEFT-ALIGNED SECTIONS ⭐ -->
-    <div class="section">
-      <h2 class="section-title">Professional Summary</h2>
-      <p>
-        Detail-oriented and self-motivated junior software & web developer with hands-on experience
-        building responsive web applications using HTML, CSS, JavaScript, C++, C#, Java and MySQL.
-        Skilled at combining technical expertise with strong organizational and leadership abilities.
-      </p>
+    <div class="footer-note">
+      Built by Alif R. Rony · Portfolio &amp; resume in one page.
     </div>
-
-    <div class="section">
-      <h2 class="section-title">Technical Skills</h2>
-      <ul>
-        <li><strong>Languages:</strong> HTML, CSS, JavaScript, C++, C#, Java</li>
-        <li><strong>Web Development:</strong> Responsive Design, UI/UX principles, DOM Manipulation</li>
-        <li><strong>Tools:</strong> Git, GitHub, MySQL, Visual Studio</li>
-        <li><strong>Design:</strong> Figma, Adobe Photoshop</li>
-        <li><strong>Additional:</strong> Linux OS, Project Management</li>
-      </ul>
-    </div>
-
-    <div class="section">
-      <h2 class="section-title">Education</h2>
-      <p>
-        <strong>LaGuardia Community College — AAS in Programming & Software Development</strong><br>
-        Expected May 2026
-      </p>
-      <ul>
-        <li>Data Structures</li>
-        <li>Algorithms</li>
-        <li>Web Development</li>
-        <li>OOP & Game Design</li>
-      </ul>
-    </div>
-
-    <div class="section">
-      <h2 class="section-title">Projects</h2>
-
-      <p><strong>Pawtopia (E-Commerce Website)</strong></p>
-      <ul>
-        <li>Developed responsive pet supply product pages using HTML, CSS & JavaScript.</li>
-        <li>Added interactive image sliders, hover effects, and cart UI.</li>
-      </ul>
-
-      <p><strong>Jobscript (Resume Builder & Matcher)</strong></p>
-      <ul>
-        <li>Built a job-matching platform with resume generation tools.</li>
-        <li>Integrated Firebase authentication and user data.</li>
-      </ul>
-
-      <p><strong>FlourSync (Retail POS System)</strong></p>
-      <ul>
-        <li>Designed full POS interface in Figma and implemented with C#, .NET MAUI, MySQL.</li>
-      </ul>
-    </div>
-
-    <div class="section">
-      <h2 class="section-title">Professional Experience</h2>
-
-      <p><strong>Operations Manager – Ideal Foods</strong> (2022 – Present)</p>
-      <ul>
-        <li>Oversees inventory and technical operations valued at $450k–$550k yearly.</li>
-        <li>Manages hiring, training, scheduling and workflow optimization.</li>
-        <li>Automates tasks to reduce manual work and improve efficiency.</li>
-      </ul>
-
-      <p><strong>Store Manager – Bagel Point</strong> (2018 – 2022)</p>
-      <ul>
-        <li>Launched and managed a new restaurant location from the ground up.</li>
-        <li>Created digital menus and daily report systems.</li>
-        <li>Improved operations through social media and customer feedback systems.</li>
-      </ul>
-    </div>
-
   </div>
 
 </body>
