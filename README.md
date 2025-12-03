@@ -25,6 +25,7 @@ It showcases my projects, technical skills, education, and experience in Softwar
 - **HTML5**
 - **CSS3** (Custom Dark Neon theme)
 - **JavaScript** (for interactions + animations)
+- **MD-Markdown Language** (for creating read-me) 
 - **Font Awesome** (icons)
 
 ---
