@@ -6,7 +6,7 @@ It showcases my projects, technical skills, education, and experience in Softwar
 ---
 
 ## 🚀 Live Website
-🔗 *Coming soon — will add after deployment*
+🔗 https://userxx7.github.io/My-Portfolio-Website/
 
 ---
 
