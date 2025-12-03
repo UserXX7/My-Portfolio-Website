@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Alif R. Rony - Resume</title>
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    body {
+      font-family: "Poppins", Arial, sans-serif;
+      background: linear-gradient(135deg, #e3f2ff, #f5f8ff);
+      margin: 0;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      background: #ffffffcc;
+      backdrop-filter: blur(10px);
+      padding: 40px;
+      border-radius: 18px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    }
+
+    /* 🔹 HEADER ONLY CENTERED */
+    .header-section {
+      text-align: center;
+      margin-bottom: 30px;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .profile-img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 15px;
+      border: 4px solid #1a73e8;
+      transition: 0.3s ease;
+    }
+
+    .profile-img:hover {
+      transform: scale(1.08);
+      box-shadow: 0 0 20px #1a73e8aa;
+    }
+
+    h1 {
+      font-size: 2.4rem;
+      color: #1a73e8;
+      margin-bottom: 8px;
+    }
+
+    .contact p {
+      margin: 5px 0;
+      font-size: 1.1rem;
+    }
+
+    .contact a {
+      color: #1a73e8;
+      text-decoration: none;
+    }
+
+    /* Icon spacing */
+    .contact i {
+      margin-right: 6px;
+      color: #1a73e8;
+    }
+
+    .links {
+      margin-top: 12px;
+    }
+
+    .links a {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin: 0 10px;
+      padding: 8px 20px;
+      border-radius: 25px;
+      border: 2px solid #1a73e8;
+      color: #1a73e8;
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.3s ease;
+    }
+
+    .links a:hover {
+      background: #1a73e8;
+      color: white;
+      box-shadow: 0 0 12px #1a73e8aa;
+      transform: translateY(-3px);
+    }
+
+    /* 🔹 SECTIONS BELOW ARE LEFT ALIGNED */
+    .section {
+      margin-bottom: 25px;
+      text-align: left;
+    }
+
+    .section-title {
+      font-size: 1.6rem;
+      border-bottom: 2px solid #ccc;
+      padding-bottom: 5px;
+      margin-bottom: 10px;
+      color: #1a73e8;
+    }
+
+    ul { padding-left: 20px; }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- ⭐ HEADER SECTION ⭐ -->
+    <div class="header-section">
+
+      <img src="https://via.placeholder.com/150" alt="Alif R. Rony" class="profile-img" />
+
+      <h1>Alif R. Rony</h1>
+
+      <div class="contact">
+        <p><i class="fa-solid fa-location-dot"></i> Woodside, NY 11377</p>
+        <p>
+          <i class="fa-solid fa-phone"></i> (631) 408-7177 |
+          <a href="mailto:alifreza@live.com">
+            <i class="fa-solid fa-envelope"></i> alifreza@live.com
+          </a>
+        </p>
+      </div>
+
+      <div class="links">
+        <a href="#"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+        <a href="#"><i class="fa-brands fa-github"></i> GitHub</a>
+        <a href="#"><i class="fa-solid fa-code"></i> Devpost</a>
+      </div>
+
+    </div>
+
+    <!-- ⭐ LEFT-ALIGNED SECTIONS ⭐ -->
+    <div class="section">
+      <h2 class="section-title">Professional Summary</h2>
+      <p>
+        Detail-oriented and self-motivated junior software & web developer with hands-on experience
+        building responsive web applications using HTML, CSS, JavaScript, C++, C#, Java and MySQL.
+        Skilled at combining technical expertise with strong organizational and leadership abilities.
+      </p>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">Technical Skills</h2>
+      <ul>
+        <li><strong>Languages:</strong> HTML, CSS, JavaScript, C++, C#, Java</li>
+        <li><strong>Web Development:</strong> Responsive Design, UI/UX principles, DOM Manipulation</li>
+        <li><strong>Tools:</strong> Git, GitHub, MySQL, Visual Studio</li>
+        <li><strong>Design:</strong> Figma, Adobe Photoshop</li>
+        <li><strong>Additional:</strong> Linux OS, Project Management</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">Education</h2>
+      <p>
+        <strong>LaGuardia Community College — AAS in Programming & Software Development</strong><br>
+        Expected May 2026
+      </p>
+      <ul>
+        <li>Data Structures</li>
+        <li>Algorithms</li>
+        <li>Web Development</li>
+        <li>OOP & Game Design</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">Projects</h2>
+
+      <p><strong>Pawtopia (E-Commerce Website)</strong></p>
+      <ul>
+        <li>Developed responsive pet supply product pages using HTML, CSS & JavaScript.</li>
+        <li>Added interactive image sliders, hover effects, and cart UI.</li>
+      </ul>
+
+      <p><strong>Jobscript (Resume Builder & Matcher)</strong></p>
+      <ul>
+        <li>Built a job-matching platform with resume generation tools.</li>
+        <li>Integrated Firebase authentication and user data.</li>
+      </ul>
+
+      <p><strong>FlourSync (Retail POS System)</strong></p>
+      <ul>
+        <li>Designed full POS interface in Figma and implemented with C#, .NET MAUI, MySQL.</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">Professional Experience</h2>
+
+      <p><strong>Operations Manager – Ideal Foods</strong> (2022 – Present)</p>
+      <ul>
+        <li>Oversees inventory and technical operations valued at $450k–$550k yearly.</li>
+        <li>Manages hiring, training, scheduling and workflow optimization.</li>
+        <li>Automates tasks to reduce manual work and improve efficiency.</li>
+      </ul>
+
+      <p><strong>Store Manager – Bagel Point</strong> (2018 – 2022)</p>
+      <ul>
+        <li>Launched and managed a new restaurant location from the ground up.</li>
+        <li>Created digital menus and daily report systems.</li>
+        <li>Improved operations through social media and customer feedback systems.</li>
+      </ul>
+    </div>
+
+  </div>
+
+</body>
+</html>
