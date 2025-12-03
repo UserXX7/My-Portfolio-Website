@@ -31,9 +31,13 @@ It showcases my projects, technical skills, education, and experience in Softwar
 
 ## 📁 Project Structure
 📂 root
+
 ├── index.html
+
 ├── profile_picture.jpg
+
 ├── README.md
+
 └── /assets (optional future images, screenshots)
 
 
